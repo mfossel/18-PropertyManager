@@ -27,11 +27,12 @@ namespace PropertyManager.API.Infrastructure
             modelBuilder.Entity<Address>()
                 .HasMany(a => a.Properties)
                 .WithRequired(p => p.Address);
-   
+
             modelBuilder.Entity<Address>()
                 .HasMany(a => a.Tenants)
                 .WithRequired(t => t.Address)
-                .HasForeignKey(t => t.AddressId);
+                .HasForeignKey(t => t.AddressId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Property>()
                  .HasMany(p => p.Leases)
@@ -49,10 +50,10 @@ namespace PropertyManager.API.Infrastructure
                 .HasForeignKey(l => l.TenantId);
 
             modelBuilder.Entity<Tenant>()
-                .HasMany(t=>t.WorkOrders)
-                .WithOptional(wo=> wo.Tenant)
-                .HasForeignKey(wo=> wo.TenantId)
-         
+                .HasMany(t => t.WorkOrders)
+                .WithOptional(wo => wo.Tenant)
+                .HasForeignKey(wo => wo.TenantId);
+        }
 
 
 

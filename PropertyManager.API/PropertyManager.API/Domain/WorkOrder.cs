@@ -18,7 +18,7 @@ namespace PropertyManager.API.Domain
     {
         public int WorkOrderId { get; set; }
         public int PropertyId { get; set; }
-        public int TenantId { get; set; }
+        public int? TenantId { get; set; }
         public string Descriptions { get; set; }
         public DateTime OpenDate { get; set; }
         public DateTime ClosedDate { get; set; }
