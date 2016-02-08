@@ -16,7 +16,7 @@ namespace PropertyManager.API.Domain
         public string ZipCode { get; set; }
 
         public virtual ICollection<Property> Properties { get; set; }
-        public virtual ICollection<Tenant> Tenant { get; set; }
+        public virtual ICollection<Tenant> Tenants { get; set; }
 
 
     }
