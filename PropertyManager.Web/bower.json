@@ -1,0 +1,19 @@
+{
+  "name": "PropertyManager.Web",
+  "homepage": "https://github.com/mfossel/18-PropertyManager",
+  "authors": [
+    "Mike Fossel <mikefossel@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
