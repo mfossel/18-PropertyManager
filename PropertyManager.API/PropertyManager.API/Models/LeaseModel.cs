@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PropertyManager.API.Domain
+namespace PropertyManager.API.Models
 {
     public enum RentFrequency
     {
@@ -15,7 +15,8 @@ namespace PropertyManager.API.Domain
         Annually = 6
 
     }
-    public class Lease
+
+    public class LeaseModel
     {
         public int LeaseId { get; set; }
         public int TenantId { get; set; }
@@ -24,10 +25,5 @@ namespace PropertyManager.API.Domain
         public DateTime? EndDate { get; set; }
         public decimal Rent { get; set; }
         public RentFrequency RentFrequency { get; set; }
-
-        public virtual Property Property { get; set; }
-        public virtual Tenant Tenant { get; set; }
-
-
     }
 }

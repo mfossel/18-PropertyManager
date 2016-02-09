@@ -43,5 +43,10 @@ C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\Sys
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.csprojResolveAssemblyReference.cache
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.dll
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.pdb
-C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.Migrations.Initial.resources
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\AutoMapper.dll
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\AutoMapper.xml
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.Migrations.initial.resources
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.csproj.GenerateResource.Cache
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\System.Web.Cors.dll
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\System.Web.Http.Cors.dll
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\System.Web.Http.Cors.xml

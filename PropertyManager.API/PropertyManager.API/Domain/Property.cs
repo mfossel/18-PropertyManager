@@ -14,7 +14,7 @@ namespace PropertyManager.API.Domain
         public int? NumberOfBedrooms { get; set; }
         public float? NumberOfBathrooms { get; set; }
 
-        public Address Address { get; set; }
+        public virtual Address Address { get; set; }
 
         public virtual ICollection<Lease> Leases { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }

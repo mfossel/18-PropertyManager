@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PropertyManager.API.Domain
+namespace PropertyManager.API.Models
 {
     public enum Priorities
     {
@@ -14,7 +14,7 @@ namespace PropertyManager.API.Domain
         Routine = 1
     }
 
-    public class WorkOrder
+    public class WorkOrderModel
     {
         public int WorkOrderId { get; set; }
         public int PropertyId { get; set; }
@@ -23,9 +23,6 @@ namespace PropertyManager.API.Domain
         public DateTime OpenDate { get; set; }
         public DateTime ClosedDate { get; set; }
         public Priorities Priority { get; set; }
-
-        public virtual Tenant Tenant { get; set; }
-        public virtual Property Property { get; set; }
 
     }
 }

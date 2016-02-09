@@ -15,18 +15,19 @@ namespace PropertyManager.API.Infrastructure
         }
 
         //SQL TABLES
-        public IDbSet<Address> Address { get; set; }
-        public IDbSet<Lease> Lease { get; set; }
-        public IDbSet<Property> Property { get; set; }
-        public IDbSet<Tenant> Tenant { get; set; }
-        public IDbSet<WorkOrder> WordOrder { get; set; }
+        public IDbSet<Address> Addresses { get; set; }
+        public IDbSet<Lease> Leases { get; set; }
+        public IDbSet<Property> Properties { get; set; }
+        public IDbSet<Tenant> Tenants { get; set; }
+        public IDbSet<WorkOrder> WorkOrders { get; set; }
 
         //SQL RELATIONSHIPS
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Address>()
                 .HasMany(a => a.Properties)
-                .WithRequired(p => p.Address);
+                .WithRequired(p => p.Address)
+                .HasForeignKey(p=> p.AddressId);
 
             modelBuilder.Entity<Address>()
                 .HasMany(a => a.Tenants)
@@ -55,8 +56,6 @@ namespace PropertyManager.API.Infrastructure
                 .HasForeignKey(wo => wo.TenantId);
         }
 
-
-
-
+        
     }
 }
