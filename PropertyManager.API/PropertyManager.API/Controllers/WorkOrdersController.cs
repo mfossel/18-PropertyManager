@@ -10,6 +10,8 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PropertyManager.API.Domain;
 using PropertyManager.API.Infrastructure;
+using PropertyManager.API.Models;
+using AutoMapper;
 
 namespace PropertyManager.API.Controllers
 {
@@ -18,13 +20,13 @@ namespace PropertyManager.API.Controllers
         private PropertyManagerDataContext db = new PropertyManagerDataContext();
 
         // GET: api/WorkOrders
-        public IQueryable<WorkOrder> GetWorkOrders()
+        public IEnumerable<WorkOrderModel> GetWorkOrders()
         {
-            return db.WorkOrders;
+            return Mapper.Map<IEnumerable<WorkOrderModel>>(db.WorkOrders);
         }
 
         // GET: api/WorkOrders/5
-        [ResponseType(typeof(WorkOrder))]
+        [ResponseType(typeof(WorkOrderModel))]
         public IHttpActionResult GetWorkOrder(int id)
         {
             WorkOrder workOrder = db.WorkOrders.Find(id);
@@ -33,12 +35,12 @@ namespace PropertyManager.API.Controllers
                 return NotFound();
             }
 
-            return Ok(workOrder);
+            return Ok(Mapper.Map<WorkOrderModel>(workOrder));
         }
 
         // PUT: api/WorkOrders/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutWorkOrder(int id, WorkOrder workOrder)
+        public IHttpActionResult PutWorkOrder(int id, WorkOrderModel workOrder)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +52,12 @@ namespace PropertyManager.API.Controllers
                 return BadRequest();
             }
 
+            var dbWorkOrder = db.WorkOrders.Find(id);
+
+
             db.Entry(workOrder).State = EntityState.Modified;
+            dbWorkOrder.Update(workOrder);
+            db.Entry(dbWorkOrder).State = EntityState.Modified;
 
             try
             {
@@ -72,16 +79,21 @@ namespace PropertyManager.API.Controllers
         }
 
         // POST: api/WorkOrders
-        [ResponseType(typeof(WorkOrder))]
-        public IHttpActionResult PostWorkOrder(WorkOrder workOrder)
+        [ResponseType(typeof(WorkOrderModel))]
+        public IHttpActionResult PostWorkOrder(WorkOrderModel workOrder)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.WorkOrders.Add(workOrder);
+            var dbWorkOrder = new WorkOrder(workOrder);
+
+            db.WorkOrders.Add(dbWorkOrder);
             db.SaveChanges();
+
+
+            workOrder.WorkOrderId = dbWorkOrder.WorkOrderId;
 
             return CreatedAtRoute("DefaultApi", new { id = workOrder.WorkOrderId }, workOrder);
         }
@@ -99,7 +111,7 @@ namespace PropertyManager.API.Controllers
             db.WorkOrders.Remove(workOrder);
             db.SaveChanges();
 
-            return Ok(workOrder);
+            return Ok(Mapper.Map<WorkOrderModel>(workOrder));
         }
 
         protected override void Dispose(bool disposing)

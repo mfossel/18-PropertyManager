@@ -6,6 +6,7 @@ using System.Web;
 
 namespace PropertyManager.API.Domain
 {
+
     public enum RentFrequency
     {
         Daily = 1,
@@ -18,6 +19,15 @@ namespace PropertyManager.API.Domain
     }
     public class Lease
     {
+        public Lease()
+        { }
+
+        public Lease(LeaseModel model)
+        {
+            this.Update(model);
+        }
+
+
         public int LeaseId { get; set; }
         public int TenantId { get; set; }
         public int PropertyId { get; set; }

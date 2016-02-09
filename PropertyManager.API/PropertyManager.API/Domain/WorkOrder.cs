@@ -17,6 +17,16 @@ namespace PropertyManager.API.Domain
 
     public class WorkOrder
     {
+
+        public WorkOrder()
+        { }
+
+        public WorkOrder(WorkOrderModel model)
+        {
+            this.Update(model);
+        }
+
+
         public int WorkOrderId { get; set; }
         public int PropertyId { get; set; }
         public int? TenantId { get; set; }

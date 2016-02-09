@@ -111,7 +111,7 @@ namespace PropertyManager.API.Controllers
             db.Addresses.Remove(address);
             db.SaveChanges();
 
-            return Ok(address);
+            return Ok(Mapper.Map<AddressModel>(address));
         }
 
         protected override void Dispose(bool disposing)

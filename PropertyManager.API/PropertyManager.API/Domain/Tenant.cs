@@ -8,6 +8,16 @@ namespace PropertyManager.API.Domain
 {
     public class Tenant
     {
+        public Tenant()
+        { }
+
+        public Tenant(TenantModel model)
+        {
+            this.Update(model);
+        }
+
+
+
         public int TenantId { get; set; }
         public int? AddressId { get; set; }
         public string FirstName { get; set; }
