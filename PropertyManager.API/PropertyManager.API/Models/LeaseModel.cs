@@ -1,20 +1,13 @@
-﻿using System;
+﻿using PropertyManager.API.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace PropertyManager.API.Models
 {
-    public enum RentFrequency
-    {
-        Daily = 1,
-        Weekly = 2,
-        Monthly = 3,
-        Quarterly = 4,
-        BiAnnually = 5,
-        Annually = 6
-
-    }
+  
 
     public class LeaseModel
     {

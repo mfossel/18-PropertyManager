@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyManager.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,6 +29,16 @@ namespace PropertyManager.API.Domain
         public virtual Property Property { get; set; }
         public virtual Tenant Tenant { get; set; }
 
+        public void Update(LeaseModel model)
+        {
+            LeaseId = model.LeaseId;
+            TenantId = model.TenantId;
+            PropertyId = model.PropertyId;
+            StartDate = model.StartDate;
+            EndDate = model.EndDate;
+            Rent = model.Rent;
+            RentFrequency = model.RentFrequency;
 
+        }
     }
 }

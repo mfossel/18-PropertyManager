@@ -8,6 +8,14 @@ namespace PropertyManager.API.Domain
 {
     public class Address
     {
+
+        public Address()
+        { }
+
+        public Address(AddressModel model)
+        {
+            this.Update(model);
+        }
         public int AddressId { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

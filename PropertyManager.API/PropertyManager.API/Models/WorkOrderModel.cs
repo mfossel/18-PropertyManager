@@ -1,19 +1,12 @@
-﻿using System;
+﻿using PropertyManager.API.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace PropertyManager.API.Models
 {
-    public enum Priorities
-    {
-        Emergency = 5,
-        High = 4,
-        Medium = 3,
-        Low = 2,
-        Routine = 1
-    }
-
+    
     public class WorkOrderModel
     {
         public int WorkOrderId { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyManager.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,5 +20,15 @@ namespace PropertyManager.API.Domain
         public virtual ICollection<Lease> Leases { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
+        public void Update(PropertyModel model)
+        {
+            PropertyId = model.PropertyId;
+            AddressId = model.AddressId;
+            PropertyName = model.PropertyName;
+            SquareFeet = model.SquareFeet;
+            NumberOfBedrooms = model.NumberOfBedrooms;
+            NumberOfBathrooms = model.NumberOfBathrooms;
+
+        }
     }
 }

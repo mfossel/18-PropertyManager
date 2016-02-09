@@ -56,6 +56,8 @@ namespace PropertyManager.API.Controllers
             
 
             db.Entry(address).State = EntityState.Modified;
+            dbAddress.Update(address);
+            db.Entry(dbAddress).State = EntityState.Modified;
 
             try
             {
@@ -77,16 +79,21 @@ namespace PropertyManager.API.Controllers
         }
 
         // POST: api/Addresses
-        [ResponseType(typeof(Address))]
-        public IHttpActionResult PostAddress(Address address)
+        [ResponseType(typeof(AddressModel))]
+        public IHttpActionResult PostAddress(AddressModel address)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Addresses.Add(address);
+            var dbAddress = new Address(address);
+
+            db.Addresses.Add(dbAddress);
             db.SaveChanges();
+
+            
+            address.AddressId = dbAddress.AddressId;
 
             return CreatedAtRoute("DefaultApi", new { id = address.AddressId }, address);
         }
