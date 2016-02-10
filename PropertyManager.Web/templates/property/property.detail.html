@@ -1,16 +1,30 @@
 ﻿<form name="propertyDetail">
 
     <div class="form-group">
-        <div>Address</div>
-        <well clearfix>
-            <button class="btn btn-success pull-right" style="margin-bottom:3px" ng-click="saveProperty()">Save</button>
-        </well>
-        <input type="text" class="form-control" ng-model="property.SquareFeet" />
+
+
+        <div>Address</div>   
+        <input type="text" class="form-control" ng-model="property.Address.Address1" />
     </div>
 
+    <div class="form-group">
+        <div>City</div>
+        <input type="text" class="form-control" ng-model="property.Address.City" />
+    </div>
 
+    <div class="form-group">
+        <div>State</div>
+        <input type="text" class="form-control" ng-model="property.Address.State" />
+    </div>
 
+    <div class="form-group">
+        <div>Zip Code</div>
+        <input type="text" class="form-control" ng-model="property.Address.ZipCode" />
+    </div>
 
+    <well clearfix>
+        <button class="btn btn-primary btn-lg center-block" style="margin-bottom:3px" ng-click="saveProperty()">Save</button>
+    </well>
 
 
 

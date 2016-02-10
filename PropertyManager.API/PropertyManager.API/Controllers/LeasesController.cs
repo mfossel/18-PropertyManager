@@ -53,8 +53,6 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbLease = db.Leases.Find(id);
-
-            db.Entry(lease).State = EntityState.Modified;
             dbLease.Update(lease);
             db.Entry(dbLease).State = EntityState.Modified;
 

@@ -1,0 +1,39 @@
+﻿<form name="workOrderCreate">
+
+    <div class="form-group">
+        <div>PropertyId</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.PropertyId" />
+    </div>
+
+    <div class="form-group">
+        <div>TenantId</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.TenantId" />
+    </div>
+
+    <div class="form-group">
+        <div>Descriptions</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.Descriptions" />
+    </div>
+
+    <div class="form-group">
+        <div>Open Date</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.OpenDate" />
+    </div>
+
+    <div class="form-group">
+        <div>Closed Date</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.ClosedDate" />
+    </div>
+
+    <div class="form-group">
+        <div>Priority</div>
+        <input type="text" class="form-control" ng-model="newWorkorder.Priority" />
+    </div>
+
+    <well clearfix>
+        <button class="btn btn-primary btn-lg center-block" style="margin-bottom:3px" ng-click="createWorkOrder()">Create</button>
+    </well>
+
+
+
+</form>

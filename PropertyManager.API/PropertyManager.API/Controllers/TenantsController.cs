@@ -53,9 +53,6 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbTenant = db.Tenants.Find(id);
-
-
-            db.Entry(tenant).State = EntityState.Modified;
             dbTenant.Update(tenant);
             db.Entry(dbTenant).State = EntityState.Modified;
 

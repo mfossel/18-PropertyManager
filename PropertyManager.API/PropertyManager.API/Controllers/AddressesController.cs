@@ -91,8 +91,6 @@ namespace PropertyManager.API.Controllers
 
             db.Addresses.Add(dbAddress);
             db.SaveChanges();
-
-            
             address.AddressId = dbAddress.AddressId;
 
             return CreatedAtRoute("DefaultApi", new { id = address.AddressId }, address);

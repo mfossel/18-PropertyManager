@@ -1,1 +1,26 @@
-﻿
+﻿<table class="tabel table-striped table-responsive">
+    <thead>
+        <tr>
+            <th style="font-size:large">First Name</th>
+            <th style="font-size:large">Last Name</th>
+            <th style="font-size:large">Telephone Number</th>
+            <th style="font-size:large">Email</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="tenant in tenants">
+            <td>{{tenant.FirstName}}</td>
+            <td>{{tenant.LastName}}</td>
+            <td>{{tenant.TelephoneNumber}}</td>
+            <td>{{tenant.Email}}</td>
+            <td>
+                <a class="btn btn-default" ng-href="#/tenants/detail/{{tenant.TenantId}}">Edit</a>
+                <a class="btn btn-danger" ng-click="deleteTenant(tenant)">Delete</a>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

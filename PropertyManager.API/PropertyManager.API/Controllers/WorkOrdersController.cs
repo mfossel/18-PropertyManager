@@ -54,8 +54,6 @@ namespace PropertyManager.API.Controllers
 
             var dbWorkOrder = db.WorkOrders.Find(id);
 
-
-            db.Entry(workOrder).State = EntityState.Modified;
             dbWorkOrder.Update(workOrder);
             db.Entry(dbWorkOrder).State = EntityState.Modified;
 

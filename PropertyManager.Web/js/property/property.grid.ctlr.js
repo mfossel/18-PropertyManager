@@ -6,4 +6,14 @@
 
     activate();
 
+    $scope.deleteProperty = function (property) {
+        property.$remove(function (data) {
+            activate();
+        })
+
+    };
+
+
+   
+
 });
