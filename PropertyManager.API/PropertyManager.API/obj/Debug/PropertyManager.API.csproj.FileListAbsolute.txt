@@ -49,3 +49,4 @@ C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Deb
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.csproj.GenerateResource.Cache
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.dll
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.pdb
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.csprojResolveAssemblyReference.cache

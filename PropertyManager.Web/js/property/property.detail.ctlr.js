@@ -6,7 +6,7 @@
         $scope.property.$update(function () {
             alert('save successful')
         }
-            );
+          );
     }
 
 });

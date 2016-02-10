@@ -53,9 +53,6 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbProperty = db.Properties.Find(id);
-
-
-            db.Entry(property).State = EntityState.Modified;
             dbProperty.Update(property);
             db.Entry(dbProperty).State = EntityState.Modified;
 
