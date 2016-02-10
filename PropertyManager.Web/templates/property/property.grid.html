@@ -1,4 +1,26 @@
-﻿<h1>PROPZ.</h1>
-<p> HELLO</p>
+﻿<table class="tabel table-striped table-responsive">
+    <thead>
+        <tr>
+            <th style="font-size:large">Address</th>
+            <th style="font-size:large">City</th>
+            <th style="font-size:large">State</th>
+            <th style="font-size:large">ZipCode</th>
+            <th></th>
+        </tr>
+    </thead>
 
-<a href="#/property/detail">Detail screen</a>
+    <tbody>
+        <tr ng-repeat="property in properties">
+            <td>{{property.Address.Address1}}</td>
+            <td>{{property.Address.City}}</td>
+            <td>{{property.Address.State}}</td>
+            <td>{{property.Address.ZipCode}}</td>
+            <td>
+                <a class="btn btn-default" ng-href="#/properties/detail/{{property.PropertyId}}">Edit</a>
+                <a class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        
+
+    </tbody>
+</table>

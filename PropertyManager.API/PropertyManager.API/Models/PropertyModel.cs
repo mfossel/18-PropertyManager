@@ -13,5 +13,7 @@ namespace PropertyManager.API.Models
         public int? SquareFeet { get; set; }
         public int? NumberOfBedrooms { get; set; }
         public float? NumberOfBathrooms { get; set; }
+
+        public AddressModel Address { get; set; }
     }
 }
