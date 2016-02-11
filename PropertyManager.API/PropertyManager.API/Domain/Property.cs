@@ -13,6 +13,7 @@ namespace PropertyManager.API.Domain
 
         public Property(PropertyModel model)
         {
+            this.Address = new Address();
             this.Update(model);
         }
 
@@ -37,6 +38,8 @@ namespace PropertyManager.API.Domain
             SquareFeet = model.SquareFeet;
             NumberOfBedrooms = model.NumberOfBedrooms;
             NumberOfBathrooms = model.NumberOfBathrooms;
+
+            Address.Update(model.Address);
 
         }
     }
