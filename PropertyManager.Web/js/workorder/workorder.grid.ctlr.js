@@ -7,7 +7,7 @@
     activate();
 
     $scope.deleteWorkOrder = function (workorder) {
-        property.$remove(function (data) {
+        workorder.$remove(function (data) {
             activate();
         })
 

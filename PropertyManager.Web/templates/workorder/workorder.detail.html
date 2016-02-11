@@ -1,13 +1,15 @@
 ﻿<form name="workOrderDetail">
 
     <div class="form-group">
-        <span class="label label-default" style="font-size:large">PropertyId</span>
-        <input type="text" class="form-control" ng-model="workorder.PropertyId" />
+
+
+        <span class="label label-default" style="font-size:large">TenantId</span>
+        <input type="text" class="form-control" ng-model="workorder.TenantId" />
     </div>
 
     <div class="form-group">
-        <span class="label label-default" style="font-size:large">TenantId</span>
-        <input type="text" class="form-control" ng-model="workorder.TenantId" />
+        <span class="label label-default" style="font-size:large">PropertyId</span>
+        <input type="text" class="form-control" ng-model="workorder.PropertyId" />
     </div>
 
     <div class="form-group">
@@ -26,9 +28,10 @@
     </div>
 
     <div class="form-group">
-        <span class="label label-default" style="font-size:large">Priorities</span>
+        <span class="label label-default" style="font-size:large">Priority</span>
         <input type="text" class="form-control" ng-model="workorder.Priority" />
     </div>
+
 
     <well clearfix>
         <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveWorkOrder()">Save</button>
