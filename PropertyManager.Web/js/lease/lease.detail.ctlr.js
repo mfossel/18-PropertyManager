@@ -1,5 +1,5 @@
 ﻿angular.module('app').controller('LeaseDetailController', function ($scope, $stateParams, LeaseResource) {
-    $scope.workOrder = LeaseResource.get({ workOrderId: $stateParams.id });
+    $scope.workOrder = {};
 
     $scope.saveLease = function () {
         $scope.lease.$update(function () {

@@ -9,10 +9,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
          .state('properties', { url: '/properties', abstract: true, template: '<ui-view/>' })
              .state('properties.grid', { url: '/grid', templateUrl: '/templates/property/property.grid.html', controller: 'PropertyGridController' })
              .state('properties.detail', { url: '/detail/:id', templateUrl: '/templates/property/property.detail.html', controller: 'PropertyDetailController' })
-            
+              .state('properties.create', { url: '/create/', templateUrl: '/templates/property/property.create.html', controller: 'PropertyCreateController' })
+
          .state('tenants', { url: '/tenants', abstract:true, template: '<ui-view/>' })
            .state('tenants.grid', { url: '/grid', templateUrl: '/templates/tenant/tenant.grid.html', controller: 'TenantGridController' })
            .state('tenants.detail', { url: '/detail/:id', templateUrl: '/templates/tenant/tenant.detail.html', controller: 'TenantDetailController' })
+           .state('tenants.create', { url: '/create/', templateUrl: '/templates/tenant/tenant.create.html', controller: 'TenantCreateController' })
 
          .state('workorders', { url: '/workorders', abstract:true, template: '<ui-view/>' })
            .state('workorders.grid', { url: '/grid', templateUrl: '/templates/workorder/workorder.grid.html', controller: 'WorkOrderGridController' })
