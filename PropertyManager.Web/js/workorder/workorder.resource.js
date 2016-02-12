@@ -3,7 +3,8 @@
       {
           'update': {
               method: 'PUT'
-          }
-
+               },
+           'high': { method: 'GET', url: apiUrl + '/workorders/highPriority'
+              }
       });
 });

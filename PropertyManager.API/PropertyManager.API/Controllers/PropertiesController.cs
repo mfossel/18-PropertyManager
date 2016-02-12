@@ -38,6 +38,8 @@ namespace PropertyManager.API.Controllers
             return Ok(Mapper.Map<PropertyModel>(property));
         }
 
+  
+
         // PUT: api/Properties/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProperty(int id, PropertyModel property)

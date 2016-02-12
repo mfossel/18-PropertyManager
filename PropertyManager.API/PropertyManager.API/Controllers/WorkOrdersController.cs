@@ -38,6 +38,13 @@ namespace PropertyManager.API.Controllers
             return Ok(Mapper.Map<WorkOrderModel>(workOrder));
         }
 
+        [Route("api/workorders/highPriority")]
+        public IEnumerable<WorkOrderModel> GetHigh()
+        {
+            var HighPriorityWorkOrders = db.WorkOrders.Where(wo => wo.Priority == (Priorities)5);
+            return Mapper.Map<IEnumerable<WorkOrderModel>>(HighPriorityWorkOrders);
+        }
+
         // PUT: api/WorkOrders/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutWorkOrder(int id, WorkOrderModel workOrder)

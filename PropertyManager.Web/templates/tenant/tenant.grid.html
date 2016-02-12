@@ -2,21 +2,21 @@
     <a class="btn btn-success" style="margin-bottom:15px" ng-href="#/tenants/create/">Create Tenant</a>
     <thead>
         <tr>
-            <th style="font-size:large">First Name</th>
-            <th style="font-size:large">Last Name</th>
-            <th style="font-size:large">Telephone Number</th>
-            <th style="font-size:large">Email</th>
+            <th style="font-size:large; padding:5px">First Name</th>
+            <th style="font-size:large; padding:5px">Last Name</th>
+            <th style="font-size:large; padding:5px">Telephone Number</th>
+            <th style="font-size:large; padding:5px">Email</th>
             <th></th>
         </tr>
     </thead>
 
     <tbody>
         <tr ng-repeat="tenant in tenants">
-            <td>{{tenant.FirstName}}</td>
-            <td>{{tenant.LastName}}</td>
-            <td>{{tenant.TelephoneNumber}}</td>
-            <td>{{tenant.Email}}</td>
-            <td>
+            <td style="padding:5px">{{tenant.FirstName}}</td>
+            <td style="padding:5px">{{tenant.LastName}}</td>
+            <td style="padding:5px">{{tenant.TelephoneNumber}}</td>
+            <td style="padding:5px">{{tenant.Email}}</td>
+            <td style="padding:5px">
                 <a class="btn btn-default" ng-href="#/tenants/detail/{{tenant.TenantId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteTenant(tenant)">Delete</a>
             </td>
