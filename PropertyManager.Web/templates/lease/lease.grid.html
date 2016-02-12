@@ -4,9 +4,9 @@
         <tr>
             <th style="font-size:large">TenantId</th>
             <th style="font-size:large">PropertyId</th>
-            <th style="font-size:large">StartDate</th>
-            <th style="font-size:large">EndDate</th>
-            <th style="font-size:large">Rent</th>
+            <th style="font-size:large; padding-right:25px">StartDate</th>
+            <th style="font-size:large; padding-right:25px">EndDate</th>
+            <th style="font-size:large; padding-right:25px">Rent</th>
             <th style="font-size:large">Rent Frequency</th>
             <th></th>
         </tr>
@@ -16,8 +16,8 @@
         <tr ng-repeat="lease in leases">
             <td>{{lease.TenantId}}</td>
             <td>{{lease.PropertyId}}</td>
-            <td>{{lease.StartDate}}</td>
-            <td>{{lease.EndDate}}</td>
+            <td>{{lease.StartDate| date: 'shortDate'}}</td>
+            <td>{{lease.EndDate| date: 'shortDate'}}</td>
             <td>{{lease.Rent}}</td>
             <td>{{lease.RentFrequency}}</td>
             <td>
