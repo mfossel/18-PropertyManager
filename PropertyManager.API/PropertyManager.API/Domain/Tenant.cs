@@ -20,12 +20,15 @@ namespace PropertyManager.API.Domain
 
         public int TenantId { get; set; }
         public int? AddressId { get; set; }
+        public string UserId { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TelephoneNumber { get; set; }
         public string Email { get; set; }
         
         public virtual Address Address { get; set; }
+        public virtual PropertyManagerUser User { get; set; }
 
         public virtual ICollection<Lease> Leases { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
