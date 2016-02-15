@@ -27,7 +27,8 @@ namespace PropertyManager.API.Infrastructure
 
             var propertyManagerUser = new PropertyManagerUser
             {
-                UserName = model.Username
+                UserName = model.Username,
+                Email = model.EmailAddress
 
             };
 
@@ -36,7 +37,10 @@ namespace PropertyManager.API.Infrastructure
             return result;
         }
 
-
+        public async Task<PropertyManagerUser> FindUser(string username, string password)      
+        {
+            return await _userManager.FindAsync(username, password);
+        }
 
         public void Dispose()
         {
