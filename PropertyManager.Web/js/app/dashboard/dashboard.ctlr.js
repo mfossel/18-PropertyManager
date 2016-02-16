@@ -1,9 +1,4 @@
-﻿angular.module('app').controller('DashboardController', function ($scope, WorkOrderResource) {
+﻿angular.module('app').controller('DashboardController', function ($scope) {
 
-    function activateDash() {
-        $scope.workordershigh = WorkOrderResource.high();
-    }
-
-    activateDash();
 
 });

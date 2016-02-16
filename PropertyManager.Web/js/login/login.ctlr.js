@@ -8,7 +8,7 @@
 
             },
             function (err) {
-                alert(err.error_description);
+                alert("error");
             }
         );
     };

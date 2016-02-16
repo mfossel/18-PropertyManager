@@ -5,7 +5,7 @@
     
     function initialize() {
         //Called when app loads
-        var token = localStorage.get('token');
+        var token = localStorage.getItem('token');
         if (token) {
             state.authorized = true;
         }
@@ -28,7 +28,7 @@
 
         var deferred = $q.defer();
 
-        $hhtp.post(apiUrl + 'token', data, {
+        $http.post(apiUrl + 'token', data, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
