@@ -250,6 +250,7 @@
     <Compile Include="Domain\Tenant.cs" />
     <Compile Include="Domain\WorkOrder.cs" />
     <Compile Include="Infrastructure\AuthorizationRepository.cs" />
+    <Compile Include="Infrastructure\PropertyManagerAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\PropertyManagerDataContext.cs" />
     <Compile Include="Migrations\201602152231118_InitialCreate.cs" />
     <Compile Include="Migrations\201602152231118_InitialCreate.Designer.cs">

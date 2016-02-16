@@ -15,6 +15,7 @@ using AutoMapper;
 
 namespace PropertyManager.API.Controllers
 {
+    [Authorize]
     public class PropertiesController : ApiController
     {
         private PropertyManagerDataContext db = new PropertyManagerDataContext();
@@ -22,14 +23,20 @@ namespace PropertyManager.API.Controllers
         // GET: api/Properties
         public IEnumerable<PropertyModel> GetProperties()
         {
-            return Mapper.Map<IEnumerable<PropertyModel>>(db.Properties);
+            return Mapper.Map<IEnumerable<PropertyModel>>(
+                db.Properties.Where(p => p.User.UserName == User.Identity.Name)
+                );
         }
 
         // GET: api/Properties/5
         [ResponseType(typeof(PropertyModel))]
         public IHttpActionResult GetProperty(int id)
         {
-            Property property = db.Properties.Find(id);
+            //Property property = db.Properties.Find(id)
+
+            Property property = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id); 
+
+
             if (property == null)
             {
                 return NotFound();
@@ -54,7 +61,15 @@ namespace PropertyManager.API.Controllers
                 return BadRequest();
             }
 
-            var dbProperty = db.Properties.Find(id);
+            //   var dbProperty = db.Properties.Find(id);
+
+            Property dbProperty = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id);
+            if(dbProperty == null)
+            {
+                return BadRequest();
+            }
+
+
             dbProperty.Update(property);
             db.Entry(dbProperty).State = EntityState.Modified;
 
@@ -87,6 +102,9 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbProperty = new Property(property);
+            dbProperty.User = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
+
             db.Properties.Add(dbProperty);
             db.SaveChanges();
 
@@ -99,7 +117,8 @@ namespace PropertyManager.API.Controllers
         [ResponseType(typeof(Property))]
         public IHttpActionResult DeleteProperty(int id)
         {
-            Property property = db.Properties.Find(id);
+            Property property = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id);
+
             if (property == null)
             {
                 return NotFound();
