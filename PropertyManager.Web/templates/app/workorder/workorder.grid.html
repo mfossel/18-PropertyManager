@@ -1,5 +1,5 @@
 ﻿<table class="tabel table-striped table-responsive" style="background-color:AppWorkspace;">
-   <a class="btn btn-success" style="margin-bottom:15px" ng-href="#/workorders/create/">Create Workorder</a>
+   <a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/workorders/create/">Create Workorder</a>
     <thead>
         <tr>
             <th style="font-size:large; padding:5px">PropertyId</th>
@@ -21,7 +21,7 @@
             <td style="padding:5px">{{workorder.ClosedDate | date: 'shortDate'}}        </td>
             <td style="padding:5px">{{workorder.Priority}}</td>
             <td style="padding:5px">
-                <a class="btn btn-default" ng-href="#/workorders/detail/{{workorder.WorkOrderId}}">Edit</a>
+                <a class="btn btn-default" ng-href="#/app/workorders/detail/{{workorder.WorkOrderId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteWorkOrder(workorder)">Delete</a>
             </td>
         </tr>

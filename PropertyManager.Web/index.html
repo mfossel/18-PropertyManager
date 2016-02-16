@@ -19,37 +19,7 @@
 
 <body style="background:url('https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.sandiegocondosin92101.com%2Fassets%2Fblog%2F1199-pacific-highway-035_web.jpg&f=1') fixed no-repeat; background-size:cover">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/dashboard">Propz</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/dashboard">Dashboard</a></li>
-                    <li><a href="#/properties/grid">Properties</a></li>
-                    <li><a href="#/leases/grid">Leases</a></li>
-                    <li><a href="#/tenants/grid">Tenants</a></li>
-                    <li><a href="#/workorders/grid">Work Orders</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-
-    <div class="container">
-
-        <div ui-view style="margin-top:100px"></div>
-
-    </div>
-
-
-
+    <div ui-view></div>
 
     <!--<script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -62,31 +32,37 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 
 
     <script src="js/app.js"></script>
+    
+    <script src="js/infrastructure/authentication.interceptor.js"></script>
+    <script src="js/infrastructure/authentication.service.js"></script>
+    <script src="js/app/app.ctlr.js"></script>
+    
 
-    <script src="js/lease/lease.detail.ctlr.js"></script>
-    <script src="js/lease/lease.grid.ctlr.js"></script>
-    <script src="js/lease/lease.resource.js"></script>
-    <script src="js/lease/lease.create.ctlr.js"></script>
+    <script src="js/app/lease/lease.detail.ctlr.js"></script>
+    <script src="js/app/lease/lease.grid.ctlr.js"></script>
+    <script src="js/app/lease/lease.resource.js"></script>
+    <script src="js/app/lease/lease.create.ctlr.js"></script>
 
-    <script src="js/property/property.detail.ctlr.js"></script>
-    <script src="js/property/property.grid.ctlr.js"></script>
-    <script src="js/property/property.resource.js"></script>
-    <script src="js/property/property.create.ctlr.js"></script>
+    <script src="js/app/property/property.detail.ctlr.js"></script>
+    <script src="js/app/property/property.grid.ctlr.js"></script>
+    <script src="js/app/property/property.resource.js"></script>
+    <script src="js/app/property/property.create.ctlr.js"></script>
 
-    <script src="js/tenant/tenant.detail.ctlr.js"></script>
-    <script src="js/tenant/tenant.grid.ctlr.js"></script>
-    <script src="js/tenant/tenant.resource.js"></script>
-    <script src="js/tenant/tenant.create.ctlr.js"></script>
+    <script src="js/app/tenant/tenant.detail.ctlr.js"></script>
+    <script src="js/app/tenant/tenant.grid.ctlr.js"></script>
+    <script src="js/app/tenant/tenant.resource.js"></script>
+    <script src="js/app/tenant/tenant.create.ctlr.js"></script>
 
-    <script src="js/workorder/workorder.detail.ctlr.js"></script>
-    <script src="js/workorder/workorder.grid.ctlr.js"></script>
-    <script src="js/workorder/workorder.resource.js"></script>
-    <script src="js/workorder/workorder.create.ctlr.js"></script>
+    <script src="js/app/workorder/workorder.detail.ctlr.js"></script>
+    <script src="js/app/workorder/workorder.grid.ctlr.js"></script>
+    <script src="js/app/workorder/workorder.resource.js"></script>
+    <script src="js/app/workorder/workorder.create.ctlr.js"></script>
 
-    <script src="js/dashboard/dashboard.ctlr.js"></script>
+    <script src="js/app/dashboard/dashboard.ctlr.js"></script>
 
 
 </body>

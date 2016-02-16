@@ -1,5 +1,5 @@
 ﻿<table class="tabel table-striped table-bordered" style="background-color:AppWorkspace;">
-    <a class="btn btn-success" style="margin-bottom:15px" ng-href="#/tenants/create/">Create Tenant</a>
+    <a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/tenants/create/">Create Tenant</a>
     <thead>
         <tr>
             <th style="font-size:large; padding:5px">First Name</th>
@@ -17,7 +17,7 @@
             <td style="padding:5px">{{tenant.TelephoneNumber}}</td>
             <td style="padding:5px">{{tenant.Email}}</td>
             <td style="padding:5px">
-                <a class="btn btn-default" ng-href="#/tenants/detail/{{tenant.TenantId}}">Edit</a>
+                <a class="btn btn-default" ng-href="#/app/tenants/detail/{{tenant.TenantId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteTenant(tenant)">Delete</a>
             </td>
         </tr>
