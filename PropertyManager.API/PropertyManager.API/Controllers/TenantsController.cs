@@ -23,14 +23,18 @@ namespace PropertyManager.API.Controllers
         // GET: api/Tenants
         public IEnumerable<TenantModel> GetTenants()
         {
-            return Mapper.Map<IEnumerable<TenantModel>>(db.Tenants);
+            return Mapper.Map<IEnumerable<TenantModel>>(
+                db.Tenants.Where(t=> t.User.UserName == User.Identity.Name)
+                );
         }
 
         // GET: api/Tenants/5
         [ResponseType(typeof(TenantModel))]
         public IHttpActionResult GetTenant(int id)
         {
-            Tenant tenant = db.Tenants.Find(id);
+            //  Tenant tenant = db.Tenants.Find(id);
+
+            Tenant tenant = db.Tenants.FirstOrDefault(t => t.User.UserName == User.Identity.Name && t.TenantId == id);
             if (tenant == null)
             {
                 return NotFound();
@@ -53,7 +57,13 @@ namespace PropertyManager.API.Controllers
                 return BadRequest();
             }
 
-            var dbTenant = db.Tenants.Find(id);
+            // var dbTenant = db.Tenants.Find(id);
+            Tenant dbTenant = db.Tenants.FirstOrDefault(t => t.User.UserName == User.Identity.Name && t.TenantId == id);
+            if (dbTenant==null)
+            {
+                return BadRequest();
+            }
+
             dbTenant.Update(tenant);
             db.Entry(dbTenant).State = EntityState.Modified;
 
@@ -86,6 +96,8 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbTenant = new Tenant(tenant);
+            dbTenant.User = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
 
             db.Tenants.Add(dbTenant);
             db.SaveChanges();
@@ -101,7 +113,7 @@ namespace PropertyManager.API.Controllers
         [ResponseType(typeof(Tenant))]
         public IHttpActionResult DeleteTenant(int id)
         {
-            Tenant tenant = db.Tenants.Find(id);
+            Tenant tenant = db.Tenants.FirstOrDefault(t => t.User.UserName == User.Identity.Name && t.TenantId == id);
             if (tenant == null)
             {
                 return NotFound();

@@ -33,7 +33,7 @@ namespace PropertyManager.API.Controllers
             }
             else
             {
-                return BadRequest("Registration for was invalid.");
+                return BadRequest("Registration form was invalid.");
             }
 
         }
