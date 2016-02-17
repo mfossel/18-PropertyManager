@@ -6,7 +6,7 @@
     function initialize() {
         //Called when app loads
         var token = localStorage.getItem('token');
-        if (token) {
+        if (token) {  
             state.authorized = true;
         }
 
@@ -14,7 +14,7 @@
 
     function register(registration) {
         //this will call /api/accounts/register
-        return $http.post(apiUrl + 'accounts/register', registration).then(
+        return $http.post(apiUrl + '/accounts/register', registration).then(
             function (response) {
                 return response;
             }
@@ -28,7 +28,7 @@
 
         var deferred = $q.defer();
 
-        $http.post(apiUrl + 'token', data, {
+        $http.post(apiUrl + '/token', data, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }

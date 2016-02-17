@@ -1,18 +1,18 @@
 ﻿<div class="container">
+    <div class="jumbotron" style="margin-top:45px">
 
-    <h1> Propz</h1>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" ng-model="loginData.username" />
+        </div>
 
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ng-model="loginData.username" />
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="loginData.password" />
+        </div>
+
+        <button class="btn btn-default" ng-click="login()">Login</button>
+
     </div>
-
-
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" ng-model="loginData.password" />
-    </div>
-
-    <button class="btn btn-default" ng-click="login()">Login</button>
-
 </div>

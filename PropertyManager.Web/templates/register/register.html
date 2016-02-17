@@ -1,27 +1,28 @@
 ﻿<div class="container">
+    <div class="jumbotron" style="margin-top:45px">
 
-    <h1> Propz</h1>
+        <h1> Propz</h1>
 
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ng-model="registration.Username" />
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" ng-model="registration.Username" />
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" ng-model="registration.EmailAddress" />
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="registration.Password" />
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" ng-model="registration.ConfirmPassword" />
+        </div>
+
+        <button class="btn btn-default" ng-click="register()">Register</button>
     </div>
-
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" ng-model="registration.EmailAddress" />
-    </div>
-
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" ng-model="registration.Password"/>
-    </div>
-
-    <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" class="form-control" ng-model="registration.ConfirmPassword" />
-    </div>
-
-    <button class="btn btn-default" ng-click="register()">Register</button>
-
 </div>
