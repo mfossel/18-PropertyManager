@@ -57,6 +57,8 @@
 
         state.authorized = false;
 
+
+        return $q.resolve();
     }
 
 

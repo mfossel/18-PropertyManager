@@ -103,7 +103,7 @@ namespace PropertyManager.API.Controllers
 
             var dbProperty = new Property(property);
             dbProperty.User = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-
+            
 
             db.Properties.Add(dbProperty);
             db.SaveChanges();

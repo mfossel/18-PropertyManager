@@ -21,6 +21,7 @@ namespace PropertyManager.API.Infrastructure
         public IDbSet<Property> Properties { get; set; }
         public IDbSet<Tenant> Tenants { get; set; }
         public IDbSet<WorkOrder> WorkOrders { get; set; }
+       
 
         //SQL RELATIONSHIPS
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -8,7 +8,7 @@
 
             },
             function (err) {
-                alert("error");
+              alert("Invalid login.");
             }
         );
     };
