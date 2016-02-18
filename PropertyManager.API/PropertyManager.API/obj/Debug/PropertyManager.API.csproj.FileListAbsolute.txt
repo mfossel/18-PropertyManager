@@ -87,5 +87,5 @@ C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\Mic
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\Microsoft.Owin.Security.Cookies.xml
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\Microsoft.Owin.Security.OAuth.xml
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\bin\System.Web.Http.Owin.xml
-C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.Migrations.InitialCreate.resources
+C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.Migrations.initial.resources
 C:\dev\origin\18-PropertyManager\PropertyManager.API\PropertyManager.API\obj\Debug\PropertyManager.API.csproj.GenerateResource.Cache
