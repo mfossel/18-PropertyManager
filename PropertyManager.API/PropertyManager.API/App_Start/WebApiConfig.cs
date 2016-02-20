@@ -17,7 +17,7 @@ namespace PropertyManager.API
 
             config.EnableCors(rules);
 
-            // Web API configuration and services
+            //Web API configuration and services
 
             // Web API routes
             config.MapHttpAttributeRoutes();

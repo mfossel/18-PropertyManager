@@ -3,8 +3,8 @@
    
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px"">TenantId</th>
-            <th style="font-size:large; padding:5px"">PropertyId</th>
+            <th style="font-size:large; padding:5px"">Tenant Name</th>
+            <th style="font-size:large; padding:5px"">Property Address</th>
             <th style="font-size:large; padding:5px"; padding-right:25px">StartDate</th>
             <th style="font-size:large; padding:5px"; padding-right:25px">EndDate</th>
             <th style="font-size:large; padding:5px"; padding-right:25px">Rent</th>
@@ -12,11 +12,11 @@
             <th></th>
         </tr>
     </thead>
-
     <tbody>
+
         <tr ng-repeat="lease in leases">
-            <td style="padding:5px">{{lease.TenantId}}</td>
-            <td style="padding:5px">{{lease.PropertyId}}</td>
+            <td style="padding:5px">{{lease.Tenant.FirstName}} {{lease.Tenant.LastName}} </td>
+            <td style="padding:5px">{{lease.Property.Address.Address1}}</td>
             <td style="padding:5px">{{lease.StartDate| date: 'shortDate'}}</td>
             <td style="padding:5px">{{lease.EndDate| date: 'shortDate'}}</td>
             <td style="padding:5px">{{lease.Rent}}</td>

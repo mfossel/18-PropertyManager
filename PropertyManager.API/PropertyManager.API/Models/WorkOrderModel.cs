@@ -17,5 +17,7 @@ namespace PropertyManager.API.Models
         public DateTime ClosedDate { get; set; }
         public Priorities Priority { get; set; }
 
+        public TenantModel Tenant { get; set; }
+        public PropertyModel Property { get; set; }
     }
 }

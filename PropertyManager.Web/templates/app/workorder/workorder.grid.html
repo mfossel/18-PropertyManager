@@ -4,8 +4,8 @@
    
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px">PropertyId</th>
-            <th style="font-size:large; padding:5px">TenantId</th>
+            <th style="font-size:large; padding:5px">Property Address</th>
+            <th style="font-size:large; padding:5px">Tenant Name</th>
             <th style="font-size:large; padding:5px">Description</th>
             <th style="font-size:large; padding:5px; padding-right:25px">Open</th>
             <th style="font-size:large; padding:5px; padding-right:25px">Close</th>
@@ -16,8 +16,8 @@
 
     <tbody>
         <tr ng-repeat="workorder in workorders">
-            <td style="padding:5px">{{workorder.PropertyId}}</td>
-            <td style="padding:5px">{{workorder.TenantId}}</td>
+            <td style="padding:5px">{{workorder.Property.Address.Address1}}</td>
+            <td style="padding:5px">{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
             <td style="padding:5px">{{workorder.Descriptions}}</td>
             <td style="padding:5px">{{workorder.OpenDate | date: 'shortDate'}}           </td>
             <td style="padding:5px">{{workorder.ClosedDate | date: 'shortDate'}}        </td>
