@@ -8,7 +8,7 @@
 
             },
             function (err) {
-              alert("Invalid login.");
+                toastr.error("Invalid login.");
             }
         );
     };

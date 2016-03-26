@@ -4,14 +4,14 @@
     $scope.register = function () {
         AuthenticationService.register($scope.registration).then(
             function (response) {
-                alert("Registration successful!");
+                toastr.success("Registration successful!");
                 $timeout(function () {
                     location.replace('/#/login');
                 }, 2000);
 
             },
             function (error) {
-                alert("Failure.");
+                toastr.error("Failure.");
 
             }
          )

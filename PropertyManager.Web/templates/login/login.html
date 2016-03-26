@@ -1,6 +1,9 @@
-﻿<div class="container">
+﻿
+<link href="../../style/app.css" rel="stylesheet" />
+
+<div class="container">
     <div class="jumbotron" style="margin-top:45px">
-        <h1>Propz</h1>
+        <h1>Propz Property Management</h1>
         <div class="form-group">
             <label>Username</label>
             <input type="text" class="form-control" ng-model="loginData.username" />
@@ -13,6 +16,9 @@
         </div>
 
         <button class="btn btn-default" ng-click="login()">Login</button>
-
+        <div style="margin-top:20px;">
+            <h4><a ng-href="/#/register">No account? Sign up here!</a></h4>
+        </div>
     </div>
+
 </div>
