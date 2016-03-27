@@ -1,28 +1,36 @@
-﻿<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/workorders/create/">Create Workorder</a>
+﻿<link href="../../../style/grid.css" rel="stylesheet" />
+<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/workorders/create/">Create Workorder</a>
 
-<table class="table-hover table-bordered" style="background-color:AppWorkspace;">
-   
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchWorkorders">
+        </div>
+    </div>
+</form>
+
+<table class="table-hover table-bordered" style="background-color:AppWorkspace;">  
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px">Property Address</th>
-            <th style="font-size:large; padding:5px">Tenant Name</th>
-            <th style="font-size:large; padding:5px">Description</th>
-            <th style="font-size:large; padding:5px; padding-right:25px">Open</th>
-            <th style="font-size:large; padding:5px; padding-right:25px">Close</th>
-            <th style="font-size:large; padding:5px">Priority</th>
+            <th>Property Address</th>
+            <th>Tenant Name</th>
+            <th>Description</th>
+            <th style="padding-right:25px">Open</th>
+            <th style="padding-right:25px">Close</th>
+            <th style="padding:5px">Priority</th>
             <th></th>
         </tr>
     </thead>
 
     <tbody>
-        <tr ng-repeat="workorder in workorders">
-            <td style="padding:5px">{{workorder.Property.Address.Address1}}</td>
-            <td style="padding:5px">{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
-            <td style="padding:5px">{{workorder.Descriptions}}</td>
-            <td style="padding:5px">{{workorder.OpenDate | date: 'shortDate'}}           </td>
-            <td style="padding:5px">{{workorder.ClosedDate | date: 'shortDate'}}        </td>
-            <td style="padding:5px">{{workorder.Priority}}</td>
-            <td style="padding:5px">
+        <tr ng-repeat="workorder in workorders | filter:searchWorkorders">
+            <td>{{workorder.Property.Address.Address1}}</td>
+            <td>{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
+            <td>{{workorder.Descriptions}}</td>
+            <td>{{workorder.OpenDate | date: 'shortDate'}}           </td>
+            <td>{{workorder.ClosedDate | date: 'shortDate'}}        </td>
+            <td>{{workorder.Priority}}</td>
+            <td>
                 <a class="btn btn-default" ng-href="#/app/workorders/detail/{{workorder.WorkOrderId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteWorkOrder(workorder)">Delete</a>
             </td>

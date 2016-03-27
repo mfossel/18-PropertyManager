@@ -1,26 +1,37 @@
-﻿<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/leases/create/">Create Lease</a>
+﻿<link href="../../../style/grid.css" rel="stylesheet" />
+
+<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/leases/create/">Create Lease</a>
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchLeases">
+        </div>
+    </div>
+</form>
+
 <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
    
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px"">Tenant Name</th>
-            <th style="font-size:large; padding:5px"">Property Address</th>
-            <th style="font-size:large; padding:5px"; padding-right:25px">StartDate</th>
-            <th style="font-size:large; padding:5px"; padding-right:25px">EndDate</th>
-            <th style="font-size:large; padding:5px"; padding-right:25px">Rent</th>
-            <th style="font-size:large; padding:5px">Rent Frequency</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th style="padding-right:25px">StartDate</th>
+            <th style="padding-right:25px">EndDate</th>
+            <th style="padding-right:25px">Rent</th>
+            <th>Frequency</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 
-        <tr ng-repeat="lease in leases">
-            <td style="padding:5px">{{lease.Tenant.FirstName}} {{lease.Tenant.LastName}} </td>
-            <td style="padding:5px">{{lease.Property.Address.Address1}}</td>
-            <td style="padding:5px">{{lease.StartDate| date: 'shortDate'}}</td>
-            <td style="padding:5px">{{lease.EndDate| date: 'shortDate'}}</td>
-            <td style="padding:5px">{{lease.Rent}}</td>
-            <td style="padding:5px">{{lease.RentFrequency}}</td>
+        <tr ng-repeat="lease in leases| filter:searchLeases">
+            <td>{{lease.Tenant.FirstName}} {{lease.Tenant.LastName}} </td>
+            <td>{{lease.Property.Address.Address1}}</td>
+            <td>{{lease.StartDate| date: 'shortDate'}}</td>
+            <td>{{lease.EndDate| date: 'shortDate'}}</td>
+            <td>{{lease.Rent}}</td>
+            <td>{{lease.RentFrequency}}</td>
             <td>
                 <a class="btn btn-default" ng-href="#/app/leases/detail/{{lease.LeaseId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteLease(lease)">Delete</a>

@@ -1,24 +1,33 @@
-﻿<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/properties/create/">Create Property</a>
+﻿<link href="../../../style/grid.css" rel="stylesheet" />
+
+<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/properties/create/">Create Property</a>
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchProperties">
+        </div>
+    </div>
+</form>
 
 <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
-   
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px">Address</th>
-            <th style="font-size:large; padding:5px">City</th>
-            <th style="font-size:large; padding:5px">State</th>
-            <th style="font-size:large; padding:5px">ZipCode</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
             <th></th>
         </tr>
     </thead>
 
     <tbody>
-        <tr ng-repeat="property in properties">
-            <td style="padding:5px">{{property.Address.Address1}}</td>
-            <td style="padding:5px">{{property.Address.City}}</td>
-            <td style="padding:5px">{{property.Address.State}}</td>
-            <td style="padding:5px">{{property.Address.ZipCode}}</td>
-            <td style="padding:5px">
+        <tr ng-repeat="property in properties| filter:searchProperties">
+            <td>{{property.Address.Address1}}</td>
+            <td>{{property.Address.City}}</td>
+            <td>{{property.Address.State}}</td>
+            <td>{{property.Address.ZipCode}}</td>
+            <td>
                 <a class="btn btn-default" ng-href="#/app/properties/detail/{{property.PropertyId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteProperty(property)">Delete</a>
             </td>

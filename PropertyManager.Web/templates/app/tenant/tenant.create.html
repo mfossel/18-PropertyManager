@@ -1,34 +1,39 @@
-﻿<form name="tenantCreate">
+﻿<link href="../../../style/create.css" rel="stylesheet" />
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">AddressId</span>
-        <input type="text" class="form-control" ng-model="newTenant.AddressId" />
-    </div>
+<div class="jumbotron">
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">First</span>
-        <input type="text" class="form-control" ng-model="newTenant.FirstName" />
-    </div>
+    <h2 style="margin-bottom:40px;" class="text-center">Create Tenant</h2>
+    <form name="tenantCreate">
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Last</span>
-        <input type="text" class="form-control" ng-model="newTenant.LastName" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">AddressId</span>
+            <input type="text" class="form-control" ng-model="newTenant.AddressId" />
+        </div>
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Telephone Number</span>
-        <input type="text" class="form-control" ng-model="newTenant.TelephoneNumber" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">First</span>
+            <input type="text" class="form-control" ng-model="newTenant.FirstName" />
+        </div>
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Email</span>
-        <input type="text" class="form-control" ng-model="newTenant.Email" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Last</span>
+            <input type="text" class="form-control" ng-model="newTenant.LastName" />
+        </div>
 
-    <well clearfix>
-        <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="createTenant()">Create</button>
-    </well>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Telephone Number</span>
+            <input type="text" class="form-control" ng-model="newTenant.TelephoneNumber" />
+        </div>
 
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Email</span>
+            <input type="text" class="form-control" ng-model="newTenant.Email" />
+        </div>
 
+        <well clearfix>
+            <button class="btn btn-success btn-lg center-block" style="margin-bottom:3px" ng-click="createTenant()">Create</button>
+        </well>
 
-</form>
+    </form>
+
+</div>

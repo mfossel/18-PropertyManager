@@ -1,31 +1,37 @@
-﻿<form name="propertyDetail">
+﻿<link href="../../../style/create.css" rel="stylesheet" />
 
-    <div class="form-group">
+<div class="jumbotron">
 
+    <h2 style="margin-bottom:40px;" class="text-center">Edit Property</h2>
 
-        <span class="label label-default" style="font-size:large">Address</span>
-        <input type="text" class="form-control" ng-model="property.Address.Address1" />
-    </div>
+    <form name="propertyDetail">
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">City</span>
-        <input type="text" class="form-control" ng-model="property.Address.City" />
-    </div>
-
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">State</span>
-        <input type="text" class="form-control" ng-model="property.Address.State" />
-    </div>
-
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Zip Code</span>
-        <input type="text" class="form-control" ng-model="property.Address.ZipCode" />
-    </div>
-
-    <well clearfix>
-        <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveProperty()">Save</button>
-    </well>
+        <div class="form-group">
 
 
+            <span class="label label-default" style="font-size:large">Address</span>
+            <input type="text" class="form-control" ng-model="property.Address.Address1" />
+        </div>
 
-</form>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">City</span>
+            <input type="text" class="form-control" ng-model="property.Address.City" />
+        </div>
+
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">State</span>
+            <input type="text" class="form-control" ng-model="property.Address.State" />
+        </div>
+
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Zip Code</span>
+            <input type="text" class="form-control" ng-model="property.Address.ZipCode" />
+        </div>
+
+        <well clearfix>
+            <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveProperty()">Save</button>
+        </well>
+
+    </form>
+
+</div>

@@ -1,39 +1,46 @@
-﻿<form name="workOrderDetail">
+﻿<link href="../../../style/create.css" rel="stylesheet" />
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">TenantId</span>
-        <input type="text" class="form-control" ng-model="workOrder.TenantId" />
-    </div>
+<div class="jumbotron">
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">PropertyId</span>
-        <input type="text" class="form-control" ng-model="workOrder.PropertyId" />
-    </div>
+    <h2 style="margin-bottom:40px;" class="text-center">Edit Workorder</h2>
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Description</span>
-        <input type="text" class="form-control" ng-model="workOrder.Descriptions" />
-    </div>
+    <form name="workOrderDetail">
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Open Date</span>
-        <input type="text" class="form-control" ng-model="workOrder.OpenDate" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">TenantId</span>
+            <input type="text" class="form-control" ng-model="workOrder.TenantId" />
+        </div>
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Closed Date</span>
-        <input type="text" class="form-control" ng-model="workOrder.ClosedDate" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">PropertyId</span>
+            <input type="text" class="form-control" ng-model="workOrder.PropertyId" />
+        </div>
 
-    <div class="form-group">
-        <span class="label label-default" style="font-size:large">Priority</span>
-        <input type="text" class="form-control" ng-model="workOrder.Priority" />
-    </div>
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Description</span>
+            <input type="text" class="form-control" ng-model="workOrder.Descriptions" />
+        </div>
+
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Open Date</span>
+            <input type="text" class="form-control" ng-model="workOrder.OpenDate" />
+        </div>
+
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Closed Date</span>
+            <input type="text" class="form-control" ng-model="workOrder.ClosedDate" />
+        </div>
+
+        <div class="form-group">
+            <span class="label label-default" style="font-size:large">Priority</span>
+            <input type="text" class="form-control" ng-model="workOrder.Priority" />
+        </div>
 
 
-    <well clearfix>
-        <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveWorkOrder()">Save</button>
-    </well>
+        <well clearfix>
+            <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveWorkOrder()">Save</button>
+        </well>
 
+    </form>
 
-</form>
+</div>

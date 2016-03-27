@@ -1,24 +1,33 @@
-﻿<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/tenants/create/">Create Tenant</a>
+﻿<link href="../../../style/grid.css" rel="stylesheet" />
 
-<table class="table-hover table-bordered" style="background-color:AppWorkspace;">
-    
+<a class="btn btn-success" style="margin-bottom:15px" ng-href="#/app/tenants/create/">Create Tenant</a>
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchTenants">
+        </div>
+    </div>
+</form>
+
+<table class="table-hover table-bordered" style="background-color:AppWorkspace;"> 
     <thead>
         <tr>
-            <th style="font-size:large; padding:5px">First Name</th>
-            <th style="font-size:large; padding:5px">Last Name</th>
-            <th style="font-size:large; padding:5px">Telephone Number</th>
-            <th style="font-size:large; padding:5px">Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Telephone Number</th>
+            <th>Email</th>
             <th></th>
         </tr>
     </thead>
 
     <tbody>
-        <tr ng-repeat="tenant in tenants">
-            <td style="padding:5px">{{tenant.FirstName}}</td>
-            <td style="padding:5px">{{tenant.LastName}}</td>
-            <td style="padding:5px">{{tenant.TelephoneNumber}}</td>
-            <td style="padding:5px">{{tenant.Email}}</td>
-            <td style="padding:5px">
+        <tr ng-repeat="tenant in tenants | filter:searchTenants">
+            <td>{{tenant.FirstName}}</td>
+            <td>{{tenant.LastName}}</td>
+            <td>{{tenant.TelephoneNumber}}</td>
+            <td>{{tenant.Email}}</td>
+            <td>
                 <a class="btn btn-default" ng-href="#/app/tenants/detail/{{tenant.TenantId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteTenant(tenant)">Delete</a>
             </td>
