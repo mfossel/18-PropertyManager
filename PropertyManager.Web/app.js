@@ -5,7 +5,7 @@ angular.module('app').value('apiUrl', 'https://propzpropertyapi.azurewebsites.ne
 
 
 //Local Host
-//angular.module('app').value('apiUrl', 'https://localhost:61209/api');
+//angular.module('app').value('apiUrl', 'http://localhost:61209/api');
 
 angular.module('app').config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $urlRouterProvider.otherwise('home');

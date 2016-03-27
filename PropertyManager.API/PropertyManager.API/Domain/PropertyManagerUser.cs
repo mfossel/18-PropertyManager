@@ -10,6 +10,8 @@ namespace PropertyManager.API.Domain
     {
         public virtual ICollection<Property> Properties { get; set; }
         public virtual ICollection<Tenant> Tenants { get; set; }
-        
+        public virtual ICollection<Lease> Leases { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+
     }
 }

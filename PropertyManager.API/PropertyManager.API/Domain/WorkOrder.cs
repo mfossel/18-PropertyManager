@@ -29,6 +29,7 @@ namespace PropertyManager.API.Domain
 
         public int WorkOrderId { get; set; }
         public int PropertyId { get; set; }
+        public string UserId { get; set; }
         public int? TenantId { get; set; }
         public string Descriptions { get; set; }
         public DateTime OpenDate { get; set; }
@@ -37,12 +38,13 @@ namespace PropertyManager.API.Domain
 
         public virtual Tenant Tenant { get; set; }
         public virtual Property Property { get; set; }
-
+        public virtual PropertyManagerUser User { get; set; }
 
         public void Update(WorkOrderModel model)
         {
             WorkOrderId = model.WorkOrderId;
             PropertyId = model.PropertyId;
+            UserId = model.UserId;
             TenantId = model.TenantId;
             Descriptions = model.Descriptions;
             OpenDate = model.OpenDate;

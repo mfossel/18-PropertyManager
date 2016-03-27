@@ -21,7 +21,7 @@ namespace PropertyManager.API.Controllers
         // GET: api/WorkOrders
         public IEnumerable<WorkOrderModel> GetWorkOrders()
         {
-            return Mapper.Map<IEnumerable<WorkOrderModel>>(db.WorkOrders);
+            return Mapper.Map<IEnumerable<WorkOrderModel>>(db.WorkOrders.Where(wo => wo.User.UserName == User.Identity.Name));
         }
 
 
@@ -29,7 +29,7 @@ namespace PropertyManager.API.Controllers
         [ResponseType(typeof(WorkOrderModel))]
         public IHttpActionResult GetWorkOrder(int id)
         {
-            WorkOrder workOrder = db.WorkOrders.Find(id);
+            WorkOrder workOrder = db.WorkOrders.FirstOrDefault(wo => wo.User.UserName == User.Identity.Name && wo.WorkOrderId == id);
             if (workOrder == null)
             {
                 return NotFound();
@@ -41,8 +41,19 @@ namespace PropertyManager.API.Controllers
         [Route("api/workorders/highpriority")]
         public IEnumerable<WorkOrderModel> GetHigh()
         {
-            var HighPriorityWorkOrders = db.WorkOrders.Where(wo => wo.Priority == (Priorities)5);
+            var HighPriorityWorkOrders = db.WorkOrders
+                                            .Where(wo => wo.User.UserName == User.Identity.Name)
+                                            .Where(wo => wo.Priority == (Priorities)5);
             return Mapper.Map<IEnumerable<WorkOrderModel>>(HighPriorityWorkOrders);
+        }
+
+        // GET: api/WorkOrdersCount
+        [Route("api/workorders/count")]
+        public int GetWorkOrdersCount()
+        {
+            int count = db.WorkOrders.Where(wo => wo.User.UserName == User.Identity.Name).Count();
+
+            return count;
         }
 
         // PUT: api/WorkOrders/5

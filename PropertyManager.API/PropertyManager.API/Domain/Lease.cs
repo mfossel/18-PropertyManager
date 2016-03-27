@@ -31,6 +31,7 @@ namespace PropertyManager.API.Domain
         public int LeaseId { get; set; }
         public int TenantId { get; set; }
         public int PropertyId { get; set; }
+        public string UserId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public decimal Rent { get; set; }
@@ -38,12 +39,14 @@ namespace PropertyManager.API.Domain
 
         public virtual Property Property { get; set; }
         public virtual Tenant Tenant { get; set; }
+        public virtual PropertyManagerUser User { get; set; }
 
         public void Update(LeaseModel model)
         {
             LeaseId = model.LeaseId;
             TenantId = model.TenantId;
             PropertyId = model.PropertyId;
+            UserId = model.UserId;
             StartDate = model.StartDate;
             EndDate = model.EndDate;
             Rent = model.Rent;

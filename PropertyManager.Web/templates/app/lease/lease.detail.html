@@ -8,7 +8,6 @@
 
         <div class="form-group">
 
-
             <span class="label label-default" style="font-size:large">TenantId</span>
             <input type="text" class="form-control" ng-model="lease.TenantId" />
         </div>
@@ -38,6 +37,14 @@
             <input type="text" class="form-control" ng-model="lease.RentFrequency" />
         </div>
 
+        <div class="col-lg-6">
+            <span class="label label-default" style="font-size:large">Tenant</span>
+            <select name="singleSelect" id="singleSelect" ng-model="lease.">
+                <option value="">---Please select---</option> <!-- not selected / blank option -->
+                <option value="{{data.option1}}">Option 1</option> <!-- interpolation -->
+                <option value="option-2">Option 2</option>
+            </select>
+        </div>
 
         <well clearfix>
             <button class="btn btn-default btn-lg center-block" style="margin-bottom:3px" ng-click="saveLease(lease)">Save</button>

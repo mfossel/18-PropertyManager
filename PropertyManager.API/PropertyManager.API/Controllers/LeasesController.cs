@@ -24,7 +24,7 @@ namespace PropertyManager.API.Controllers
 
         public IEnumerable<LeaseModel> GetLeases()
         {
-            return Mapper.Map<IEnumerable<LeaseModel>>(db.Leases);
+            return Mapper.Map<IEnumerable<LeaseModel>>(db.Leases.Where(l => l.User.UserName == User.Identity.Name));
         }
 
 
@@ -32,13 +32,22 @@ namespace PropertyManager.API.Controllers
         [ResponseType(typeof(LeaseModel))]
         public IHttpActionResult GetLease(int id)
         {
-            Lease lease = db.Leases.Find(id);
+            Lease lease = db.Leases.FirstOrDefault(l => l.User.UserName == User.Identity.Name && l.LeaseId == id);
             if (lease == null)
             {
                 return NotFound();
             }
 
             return Ok(Mapper.Map<LeaseModel>(lease));
+        }
+
+        // GET: api/LeasesCount
+        [Route("api/leases/count")]
+        public int GetLeasesCount()
+        {
+            int count = db.Leases.Where(l => l.User.UserName == User.Identity.Name).Count();
+
+            return count;
         }
 
         // PUT: api/Leases/5
@@ -55,7 +64,7 @@ namespace PropertyManager.API.Controllers
                 return BadRequest();
             }
 
-            var dbLease = db.Leases.Find(id);
+            var dbLease = db.Leases.FirstOrDefault(l => l.User.UserName == User.Identity.Name && l.LeaseId == id);
             dbLease.Update(lease);
             db.Entry(dbLease).State = EntityState.Modified;
 
@@ -88,6 +97,7 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbLease = new Lease(lease);
+            dbLease.User = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
             db.Leases.Add(dbLease);
             db.SaveChanges();
@@ -101,7 +111,7 @@ namespace PropertyManager.API.Controllers
         [ResponseType(typeof(Lease))]
         public IHttpActionResult DeleteLease(int id)
         {
-            Lease lease = db.Leases.Find(id);
+            Lease lease = db.Leases.FirstOrDefault(l => l.User.UserName == User.Identity.Name && l.LeaseId == id);
             if (lease == null)
             {
                 return NotFound();

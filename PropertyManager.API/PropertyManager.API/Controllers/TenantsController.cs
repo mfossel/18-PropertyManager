@@ -37,6 +37,17 @@ namespace PropertyManager.API.Controllers
             return count;
         }
 
+        // GET: api/NewTenants
+        [Route("api/tenants/new")]
+        public IEnumerable<TenantModel> GetNewTenants()
+        {
+            var newTenants = db.Tenants.Where(t => t.User.UserName == User.Identity.Name)
+                                                .OrderBy(t => t.TenantId)
+                                                .Take(10);
+
+            return Mapper.Map<IEnumerable<TenantModel>>(newTenants);
+        }
+
         // GET: api/Tenants/5
         [ResponseType(typeof(TenantModel))]
         public IHttpActionResult GetTenant(int id)

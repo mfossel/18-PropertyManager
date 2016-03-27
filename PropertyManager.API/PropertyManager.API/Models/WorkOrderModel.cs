@@ -11,6 +11,7 @@ namespace PropertyManager.API.Models
     {
         public int WorkOrderId { get; set; }
         public int PropertyId { get; set; }
+        public string UserId { get; set; }
         public int? TenantId { get; set; }
         public string Descriptions { get; set; }
         public DateTime OpenDate { get; set; }

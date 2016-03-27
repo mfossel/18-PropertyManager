@@ -69,6 +69,20 @@ namespace PropertyManager.API.Infrastructure
                 .HasForeignKey(t => t.UserId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<PropertyManagerUser>()
+                .HasMany(u => u.Leases)
+                .WithRequired(l => l.User)
+                .HasForeignKey(l => l.UserId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyManagerUser>()
+                .HasMany(u => u.WorkOrders)
+                .WithRequired(wo => wo.User)
+                .HasForeignKey(wo => wo.UserId)
+                .WillCascadeOnDelete(false);
+
+
+
 
             //Set up relationships for ASP.NET Identity
             base.OnModelCreating(modelBuilder);

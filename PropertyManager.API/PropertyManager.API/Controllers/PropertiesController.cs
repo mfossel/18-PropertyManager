@@ -29,12 +29,23 @@ namespace PropertyManager.API.Controllers
         }
 
         // GET: api/PropertiesCount
-        [Route("api/proprties/count")]
+        [Route("api/properties/count")]
         public int GetPropertiesCount()
         {
             int count = db.Properties.Where(p => p.User.UserName == User.Identity.Name).Count();
 
             return count;
+        }
+
+        // GET: api/NewProperties
+        [Route("api/properties/new")]
+        public IEnumerable<PropertyModel> GetNewProperties()
+        {
+            var newProperties = db.Properties.Where(p => p.User.UserName == User.Identity.Name)
+                                                .OrderBy(p => p.PropertyId)
+                                                .Take(10);
+
+            return Mapper.Map<IEnumerable<PropertyModel>>(newProperties);
         }
 
         // GET: api/Properties/5
@@ -70,7 +81,6 @@ namespace PropertyManager.API.Controllers
                 return BadRequest();
             }
 
-            //   var dbProperty = db.Properties.Find(id);
 
             Property dbProperty = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id);
             if(dbProperty == null)
