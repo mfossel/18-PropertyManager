@@ -28,6 +28,15 @@ namespace PropertyManager.API.Controllers
                 );
         }
 
+        // GET: api/TenantsCount
+        [Route("api/Tenants/count")]
+        public int GetTenantsCount()
+        {
+            int count = db.Tenants.Where(t => t.User.UserName == User.Identity.Name).Count();
+
+            return count;
+        }
+
         // GET: api/Tenants/5
         [ResponseType(typeof(TenantModel))]
         public IHttpActionResult GetTenant(int id)

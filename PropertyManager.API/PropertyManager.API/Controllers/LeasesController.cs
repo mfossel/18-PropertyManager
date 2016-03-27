@@ -27,6 +27,7 @@ namespace PropertyManager.API.Controllers
             return Mapper.Map<IEnumerable<LeaseModel>>(db.Leases);
         }
 
+
         // GET: api/Leases/5
         [ResponseType(typeof(LeaseModel))]
         public IHttpActionResult GetLease(int id)

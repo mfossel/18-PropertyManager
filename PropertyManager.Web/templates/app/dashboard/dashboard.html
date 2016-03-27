@@ -1,1 +1,74 @@
-﻿
+﻿<link href="../../../style/grid.css" rel="stylesheet" />
+
+
+
+<div class="container">
+
+    <!--<div  class="text-center" style="margin-bottom:30px;">
+        <span class="label label-default" style="font-size:xx-large; text-align:center;">
+            Welcome to Propz!
+        </span>
+    </div>-->
+
+    <div class="text-center" style="margin-bottom:50px;">
+        <img src="../../../img/lease.jpg" style="height:300px; width:auto;" />
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-5">
+            <span class="label label-danger" style="font-size:large">High Priority Workorders</span>
+            <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
+
+                <thead>
+                    <tr>
+                        <th class="success" style="font-size:large; padding:5px">Address</th>
+                        <th class="success" style="font-size:large; padding:5px">Tenant</th>
+                        <th class="success" style="font-size:large; padding:5px">Description</th>
+                        <th class="success" style="font-size:large; padding:5px">Link</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="workorder in highPriorityWorkorders">
+                        <td>{{workorder.Property.Address.Address1}}</td>
+                        <td>{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
+                        <td>{{workorder.Descriptions}}</td>
+                        <td style="padding:5px"><a class="btn btn-default" ng-href="#/app/workorders/detail/{{workorder.WorkOrderId}}">Link</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <span class="label label-danger" style="font-size:large">Current Account</span>
+            <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
+                <thead>
+
+                    <tr>
+                        <th class="success" style="font-size:large; padding:5px">Number of Properties</th>
+                        <th class="success" style="font-size:large; padding:5px">Number of Tenants</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="padding:5px">{{propertyCount}}</td>
+                        <td style="padding:5px">{{tenantCount}}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+            </div>
+        </div>
+
+    </div>
+</div>

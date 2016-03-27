@@ -24,6 +24,7 @@ namespace PropertyManager.API.Controllers
             return Mapper.Map<IEnumerable<WorkOrderModel>>(db.WorkOrders);
         }
 
+
         // GET: api/WorkOrders/5
         [ResponseType(typeof(WorkOrderModel))]
         public IHttpActionResult GetWorkOrder(int id)
@@ -37,7 +38,7 @@ namespace PropertyManager.API.Controllers
             return Ok(Mapper.Map<WorkOrderModel>(workOrder));
         }
 
-        [Route("api/workorders/highPriority")]
+        [Route("api/workorders/highpriority")]
         public IEnumerable<WorkOrderModel> GetHigh()
         {
             var HighPriorityWorkOrders = db.WorkOrders.Where(wo => wo.Priority == (Priorities)5);
