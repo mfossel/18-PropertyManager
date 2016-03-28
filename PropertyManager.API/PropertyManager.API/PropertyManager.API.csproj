@@ -241,6 +241,7 @@
     <Content Include="apiapp.json" />
     <None Include="Properties\PublishProfiles\PropzAPI.pubxml" />
     <None Include="Properties\PublishProfiles\PropzPropertyAPI - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\PropzPropertyAPI.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -275,9 +276,9 @@
     <Compile Include="Infrastructure\AuthorizationRepository.cs" />
     <Compile Include="Infrastructure\PropertyManagerAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\PropertyManagerDataContext.cs" />
-    <Compile Include="Migrations\201603271848136_initial-update.cs" />
-    <Compile Include="Migrations\201603271848136_initial-update.Designer.cs">
-      <DependentUpon>201603271848136_initial-update.cs</DependentUpon>
+    <Compile Include="Migrations\201603280123038_fixing.cs" />
+    <Compile Include="Migrations\201603280123038_fixing.Designer.cs">
+      <DependentUpon>201603280123038_fixing.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddressModel.cs" />
@@ -317,8 +318,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603271848136_initial-update.resx">
-      <DependentUpon>201603271848136_initial-update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603280123038_fixing.resx">
+      <DependentUpon>201603280123038_fixing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
