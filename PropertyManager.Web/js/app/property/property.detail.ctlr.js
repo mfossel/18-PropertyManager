@@ -4,7 +4,7 @@
 
     $scope.saveProperty = function () {
         $scope.property.$update(function () {
-            alert('save successful')
+            toastr.success('Save Successful.');
         }
           );
     }

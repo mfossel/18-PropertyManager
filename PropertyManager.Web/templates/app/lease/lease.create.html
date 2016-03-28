@@ -6,13 +6,17 @@
 
     <form name="workOrderCreate">
         <div class="form-group">
-            <span class="label label-default" style="font-size:large">TenantId</span>
-            <input type="text" class="form-control" ng-model="newLease.TenantId" />
+            <span class="label label-default" style="font-size:large">Tenant</span>
+            <select class="form-control" ng-options="t.TenantId as t.LastName for t in tenants" ng-model="newLease.TenantId">
+                <option value="">Select a Tenant</option>
+            </select>
         </div>
 
         <div class="form-group">
             <span class="label label-default" style="font-size:large">PropertyId</span>
-            <input type="text" class="form-control" ng-model="newLease.PropertyId" />
+            <select class="form-control" ng-options="p.PropertyId as p.Address1 for p in properties" ng-model="newLease.PropertyId">
+                <option value="">Select a Property</option>
+            </select>
         </div>
 
         <div class="form-group">

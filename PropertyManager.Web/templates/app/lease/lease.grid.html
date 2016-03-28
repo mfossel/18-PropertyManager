@@ -27,7 +27,7 @@
 
         <tr ng-repeat="lease in leases| filter:searchLeases">
             <td>{{lease.Tenant.FirstName}} {{lease.Tenant.LastName}} </td>
-            <td>{{lease.Property.Address.Address1}}</td>
+            <td>{{lease.Property.Address1}}</td>
             <td>{{lease.StartDate| date: 'shortDate'}}</td>
             <td>{{lease.EndDate| date: 'shortDate'}}</td>
             <td>{{lease.Rent}}</td>

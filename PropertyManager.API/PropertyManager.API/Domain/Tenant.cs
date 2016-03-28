@@ -17,9 +17,7 @@ namespace PropertyManager.API.Domain
         }
 
 
-
         public int TenantId { get; set; }
-        public int? AddressId { get; set; }
         public string UserId { get; set; }
 
         public string FirstName { get; set; }
@@ -27,7 +25,6 @@ namespace PropertyManager.API.Domain
         public string TelephoneNumber { get; set; }
         public string Email { get; set; }
         
-        public virtual Address Address { get; set; }
         public virtual PropertyManagerUser User { get; set; }
 
         public virtual ICollection<Lease> Leases { get; set; }
@@ -36,7 +33,6 @@ namespace PropertyManager.API.Domain
         public void Update(TenantModel model)
         {
             TenantId = model.TenantId;
-            AddressId = model.AddressId;
             FirstName = model.FirstName;
             LastName = model.LastName;
             TelephoneNumber = model.TelephoneNumber;

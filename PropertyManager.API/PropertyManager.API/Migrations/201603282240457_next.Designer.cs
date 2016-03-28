@@ -7,13 +7,13 @@ namespace PropertyManager.API.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fixing : IMigrationMetadata
+    public sealed partial class next : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fixing));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(next));
         
         string IMigrationMetadata.Id
         {
-            get { return "201603280123038_fixing"; }
+            get { return "201603282240457_next"; }
         }
         
         string IMigrationMetadata.Source

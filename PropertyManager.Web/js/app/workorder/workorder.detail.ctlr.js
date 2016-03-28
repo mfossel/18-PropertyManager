@@ -3,7 +3,7 @@
 
     $scope.saveWorkOrder = function () {
         $scope.workOrder.$update(function () {
-            alert('save successful')
+            toastr.success('Save Successful.');
         }
           );
     }

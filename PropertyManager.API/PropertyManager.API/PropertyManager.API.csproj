@@ -262,12 +262,10 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
-    <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\LeasesController.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\WorkOrdersController.cs" />
-    <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\Lease.cs" />
     <Compile Include="Domain\Property.cs" />
     <Compile Include="Domain\PropertyManagerUser.cs" />
@@ -276,9 +274,13 @@
     <Compile Include="Infrastructure\AuthorizationRepository.cs" />
     <Compile Include="Infrastructure\PropertyManagerAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\PropertyManagerDataContext.cs" />
-    <Compile Include="Migrations\201603280123038_fixing.cs" />
-    <Compile Include="Migrations\201603280123038_fixing.Designer.cs">
-      <DependentUpon>201603280123038_fixing.cs</DependentUpon>
+    <Compile Include="Migrations\201603282155487_addressremoved.cs" />
+    <Compile Include="Migrations\201603282155487_addressremoved.Designer.cs">
+      <DependentUpon>201603282155487_addressremoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603282240457_next.cs" />
+    <Compile Include="Migrations\201603282240457_next.Designer.cs">
+      <DependentUpon>201603282240457_next.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddressModel.cs" />
@@ -318,8 +320,11 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603280123038_fixing.resx">
-      <DependentUpon>201603280123038_fixing.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603282155487_addressremoved.resx">
+      <DependentUpon>201603282155487_addressremoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603282240457_next.resx">
+      <DependentUpon>201603282240457_next.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

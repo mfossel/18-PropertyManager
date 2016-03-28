@@ -4,7 +4,7 @@
 
     $scope.saveLease = function () {
         $scope.lease.$update(function () {
-            alert('save successful')
+            toastr.success('Save Successful.');
         }
           );
     }

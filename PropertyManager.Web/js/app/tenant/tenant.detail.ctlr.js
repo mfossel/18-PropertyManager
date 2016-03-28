@@ -3,7 +3,7 @@
 
     $scope.saveTenant = function () {
         $scope.tenant.$update(function () {
-            alert('save successful')
+            toastr.success('Save Successful.');
         }
           );
     }

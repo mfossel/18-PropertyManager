@@ -6,6 +6,7 @@
     $scope.createTenant = function () {
         TenantResource.save($scope.newTenant, function () {
             $scope.newTenant = {};
+            toastr.success('Tenant Created!');
         });
     };
 });
