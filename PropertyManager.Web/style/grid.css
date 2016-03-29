@@ -3,11 +3,19 @@
 }
 
 th {
-    padding: 20px;
+    padding: 10px;
     font-size:x-large
 }
 
 td {
-    padding:8px;
-        font-size:larger;
+    padding:4px;
+    font-size:larger;
+}
+
+
+.box {
+    text-align: center;
+    display: block;
+    margin-top: 30px;
+    margin-bottom:50px;
 }

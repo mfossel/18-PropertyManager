@@ -43,7 +43,7 @@ namespace PropertyManager.API.Controllers
         {
             var newTenants = db.Tenants.Where(t => t.User.UserName == User.Identity.Name)
                                                 .OrderBy(t => t.TenantId)
-                                                .Take(10);
+                                                .Take(5);
 
             return Mapper.Map<IEnumerable<TenantModel>>(newTenants);
         }

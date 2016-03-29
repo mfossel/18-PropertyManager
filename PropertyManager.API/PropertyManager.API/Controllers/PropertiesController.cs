@@ -43,7 +43,7 @@ namespace PropertyManager.API.Controllers
         {
             var newProperties = db.Properties.Where(p => p.User.UserName == User.Identity.Name)
                                                 .OrderBy(p => p.PropertyId)
-                                                .Take(10);
+                                                .Take(5);
 
             return Mapper.Map<IEnumerable<PropertyModel>>(newProperties);
         }

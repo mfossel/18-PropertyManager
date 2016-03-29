@@ -2,11 +2,19 @@
 
 
 
-<div class="container">
+
+    <div class="col-lg-5 col-lg-offset-3" style="margin-bottom:35px;">
+        <div class="box">
+
+            <img src="../../../img/lease.jpg" class="img-thumbnail" />
+        </div>
+
+    </div>
+
 
     <div class="row">
 
-        <div class="col-lg-5">
+        <div class="col-lg-6 col-lg-offset-3">
             <span class="label label-danger" style="font-size:large">High Priority Workorders</span>
             <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
 
@@ -31,57 +39,30 @@
                 </tbody>
             </table>
         </div>
-
-
-
-        <div class="col-lg-5 col-lg-offset-1">
-            <span class="label label-danger" style="font-size:large">Current Account</span>
-            <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
-                <thead>
-
-                    <tr>
-                        <th class="success" style="font-size:large; padding:5px">Number of Properties</th>
-                        <th class="success" style="font-size:large; padding:5px">Number of Tenants</th>
-
-                    </tr>
-
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td style="padding:5px">{{propertyCount}}</td>
-                        <td style="padding:5px">{{tenantCount}}</td>
-
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
     </div>
 
 
-    <div class="row" style="margin-top:50px;">
-        <div class="col-lg-5">
-            <span class="label label-danger" style="font-size:large">New Tenants</span>
+    <div class="row" style="margin-top:50px; margin-bottom:50px;">
+        <div class="col-lg-6">
+            <span class="label label-success" style="font-size:large">New Tenants</span>
             <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
 
                 <thead>
                     <tr>
-                        <th class="success" style="font-size:large; padding:5px">Address</th>
-                        <th class="success" style="font-size:large; padding:5px">Tenant</th>
-                        <th class="success" style="font-size:large; padding:5px">Description</th>
+                        <th class="success" style="font-size:large; padding:5px">Name</th>
+                        <th class="success" style="font-size:large; padding:5px">Phone Number</th>
+                        <th class="success" style="font-size:large; padding:5px">Email</th>
                         <th class="success" style="font-size:large; padding:5px">Link</th>
                     </tr>
 
                 </thead>
                 <tbody>
 
-                    <tr ng-repeat="workorder in highPriorityWorkorders">
-                        <td>{{workorder.Property.Address1}}</td>
-                        <td>{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
-                        <td>{{workorder.Descriptions}}</td>
-                        <td style="padding:5px"><a class="btn btn-default" ng-href="#/app/workorders/detail/{{workorder.WorkOrderId}}">Link</a></td>
+                    <tr ng-repeat="tenant in newTenants">
+                        <td>{{tenant.FirstName}} {{tenant.LastName}}</td>
+                        <td>{{tenant.TelephoneNumber}}</td>
+                        <td>{{tenant.Email}}</td>
+                        <td style="padding:5px"><a class="btn btn-default" ng-href="#/app/tenants/detail/{{tenant.TenantId}}">Link</a></td>
                     </tr>
 
                 </tbody>
@@ -90,24 +71,26 @@
 
 
 
-        <div class="col-lg-5 col-lg-offset-1">
-            <span class="label label-danger" style="font-size:large">New Leases</span>
+        <div class="col-lg-6">
+            <span class="label label-success" style="font-size:large">New Properties</span>
             <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
                 <thead>
 
                     <tr>
-                        <th class="success" style="font-size:large; padding:5px">Number of Properties</th>
-                        <th class="success" style="font-size:large; padding:5px">Number of Tenants</th>
-
+                        <th class="success" style="font-size:large; padding:5px">Address</th>
+                        <th class="success" style="font-size:large; padding:5px">City</th>
+                        <th class="success" style="font-size:large; padding:5px">State</th>
+                        <th class="success" style="font-size:large; padding:5px">Zip Code</th>
                     </tr>
 
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <td style="padding:5px">{{propertyCount}}</td>
-                        <td style="padding:5px">{{tenantCount}}</td>
-
+                    <tr ng-repeat="property in newProperties">
+                        <td style="padding:5px">{{property.Address1}}</td>
+                        <td style="padding:5px">{{property.City}}</td>
+                        <td style="padding:5px">{{propertyState}}</td>
+                        <td style="padding:5px">{{property.ZipCode}}</td>
                     </tr>
 
                 </tbody>
@@ -116,4 +99,3 @@
 
     </div>
 
-</div>

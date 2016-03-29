@@ -19,6 +19,25 @@ function activate() {
 
     });
 
+    DashboardResource.getLeaseCount().then(function (response) {
+        $scope.leaseCount = response;
+
+
+    });
+
+    DashboardResource.getNewTenants().then(function (response) {
+        $scope.newTenants = response;
+
+
+    });
+
+
+    DashboardResource.getNewProperties().then(function (response) {
+        $scope.newProperties = response;
+
+
+    });
+
    
 }
 

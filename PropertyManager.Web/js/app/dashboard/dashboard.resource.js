@@ -20,11 +20,35 @@
                     });
     }
 
+    function getLeaseCount() {
+        return $http.get(apiUrl + '/leases/count')
+                    .then(function (response) {
+                        return response.data;
+                    });
+    }
+
+    function getNewTenants() {
+        return $http.get(apiUrl + '/tenants/new')
+                    .then(function (response) {
+                        return response.data;
+                    });
+    }
+
+
+    function getNewProperties() {
+        return $http.get(apiUrl + '/properties/new')
+                    .then(function (response) {
+                        return response.data;
+                    });
+    }
 
     return {
         getHighPriority: getHighPriority,
         getTenantCount: getTenantCount,
-        getPropertyCount: getPropertyCount
+        getPropertyCount: getPropertyCount,
+        getLeaseCount: getLeaseCount,
+        getNewTenants: getNewTenants,
+        getNewProperties: getNewProperties
     };
 
 });
