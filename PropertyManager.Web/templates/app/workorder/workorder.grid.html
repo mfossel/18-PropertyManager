@@ -24,7 +24,7 @@
 
     <tbody>
         <tr ng-repeat="workorder in workorders | filter:searchWorkorders">
-            <td>{{workorder.Property.Address.Address1}}</td>
+            <td>{{workorder.Property.Address1}}</td>
             <td>{{workorder.Tenant.FirstName}} {{workorder.Tenant.LastName}}</td>
             <td>{{workorder.Descriptions}}</td>
             <td>{{workorder.OpenDate | date: 'shortDate'}}           </td>

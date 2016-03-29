@@ -13,13 +13,13 @@ namespace PropertyManager.API.Controllers
     public class AccountsController : ApiController
     {
         private AuthorizationRepository _repo = new AuthorizationRepository();
-        
+
         [AllowAnonymous]
         [Route("api/accounts/register")]
         public async Task<IHttpActionResult> Register(RegistrationModel registration)
         {
             //1. Server Side Validation
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -27,7 +27,7 @@ namespace PropertyManager.API.Controllers
             var result = await _repo.RegisterUser(registration);
 
             //3. Check if reg was successful
-            if(!result.Succeeded)
+            if (!result.Succeeded)
             {
                 return Ok();
             }

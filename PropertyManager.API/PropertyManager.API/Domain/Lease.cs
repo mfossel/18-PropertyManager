@@ -35,7 +35,7 @@ namespace PropertyManager.API.Domain
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public decimal Rent { get; set; }
-        public RentFrequency RentFrequency { get; set; }
+        public RentFrequency? RentFrequency { get; set; }
 
         public virtual Property Property { get; set; }
         public virtual Tenant Tenant { get; set; }

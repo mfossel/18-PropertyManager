@@ -26,17 +26,27 @@
 
         <div class="form-group">
             <span class="label label-default" style="font-size:large">Open Date</span>
-            <input type="text" class="form-control" ng-model="newWorkOrder.OpenDate" />
+            <div>
+                <input datetime-picker type="date" ng-model="newWorkOrder.OpenDate" />
+            </div>
         </div>
 
         <div class="form-group">
-            <span class="label label-default" style="font-size:large">Closed Date</span>
-            <input type="text" class="form-control" ng-model="newWorkOrder.ClosedDate" />
+            <span class="label label-default" style="font-size:large">Closed Date (Optional)</span>
+            <div>
+                <input datetime-picker type="date" ng-model="newWorkOrder.ClosedDate" />
+            </div>
         </div>
 
         <div class="form-group">
             <span class="label label-default" style="font-size:large">Priority</span>
-            <input type="text" class="form-control" ng-model="newWorkOrder.Priority" />
+            <div style="margin-top:15px;">
+                <input type="radio" ng-model="newWorkOrder.Priority" value="1">  Routine<br />
+                <input type="radio" ng-model="newWorkOrder.Priority" value="2"> Low <br />
+                <input type="radio" ng-model="newWorkOrder.Priority" value="3"> Medium <br />
+                <input type="radio" ng-model="newWorkOrder.Priority" value="4"> High <br />
+                <input type="radio" ng-model="newWorkOrder.Priority" value="5"> Emergency <br />
+            </div>
         </div>
 
         <well clearfix>

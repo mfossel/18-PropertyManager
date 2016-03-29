@@ -19,7 +19,6 @@
             <th style="padding-right:25px">StartDate</th>
             <th style="padding-right:25px">EndDate</th>
             <th style="padding-right:25px">Rent</th>
-            <th>Frequency</th>
             <th></th>
         </tr>
     </thead>
@@ -31,7 +30,6 @@
             <td>{{lease.StartDate| date: 'shortDate'}}</td>
             <td>{{lease.EndDate| date: 'shortDate'}}</td>
             <td>{{lease.Rent}}</td>
-            <td>{{lease.RentFrequency}}</td>
             <td>
                 <a class="btn btn-default" ng-href="#/app/leases/detail/{{lease.LeaseId}}">Edit</a>
                 <a class="btn btn-danger" ng-click="deleteLease(lease)">Delete</a>

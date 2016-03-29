@@ -8,6 +8,7 @@
 
     $scope.deleteProperty = function (property) {
         property.$remove(function (data) {
+            toastr.error('Property Deleted');
             activate();
         })
 

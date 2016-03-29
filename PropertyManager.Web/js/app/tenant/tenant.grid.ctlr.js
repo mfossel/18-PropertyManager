@@ -7,6 +7,7 @@
 
     $scope.deleteTenant = function (tenant) {
         tenant.$remove(function (data) {
+            toastr.error('Tenant Deleted');
             activate();
         })
 

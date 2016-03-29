@@ -8,6 +8,7 @@
 
     $scope.deleteWorkOrder = function (workorder) {
         workorder.$remove(function (data) {
+            toastr.error('Workorder Deleted');
             activate();
         })
 

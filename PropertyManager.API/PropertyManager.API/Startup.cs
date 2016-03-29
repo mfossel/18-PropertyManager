@@ -35,6 +35,7 @@ namespace PropertyManager.API
             //configure authorization
             var authorizationOptions = new OAuthAuthorizationServerOptions
             {
+                
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),

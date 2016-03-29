@@ -1,4 +1,4 @@
-﻿angular.module('app', ['ngResource', 'ui.router', 'LocalStorageModule']);
+﻿angular.module('app', ['ngResource', 'ui.router', 'LocalStorageModule', 'ui.bootstrap.datetimepicker']);
 
 //Internet Host
 //angular.module('app').value('apiUrl', 'https://propzpropertyapi.azurewebsites.net/api');

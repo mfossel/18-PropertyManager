@@ -274,13 +274,9 @@
     <Compile Include="Infrastructure\AuthorizationRepository.cs" />
     <Compile Include="Infrastructure\PropertyManagerAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\PropertyManagerDataContext.cs" />
-    <Compile Include="Migrations\201603282155487_addressremoved.cs" />
-    <Compile Include="Migrations\201603282155487_addressremoved.Designer.cs">
-      <DependentUpon>201603282155487_addressremoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201603282240457_next.cs" />
-    <Compile Include="Migrations\201603282240457_next.Designer.cs">
-      <DependentUpon>201603282240457_next.cs</DependentUpon>
+    <Compile Include="Migrations\201603291834095_creation.cs" />
+    <Compile Include="Migrations\201603291834095_creation.Designer.cs">
+      <DependentUpon>201603291834095_creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddressModel.cs" />
@@ -320,11 +316,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603282155487_addressremoved.resx">
-      <DependentUpon>201603282155487_addressremoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603282240457_next.resx">
-      <DependentUpon>201603282240457_next.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603291834095_creation.resx">
+      <DependentUpon>201603291834095_creation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

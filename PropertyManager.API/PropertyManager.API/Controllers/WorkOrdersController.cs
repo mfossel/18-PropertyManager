@@ -104,6 +104,7 @@ namespace PropertyManager.API.Controllers
             }
 
             var dbWorkOrder = new WorkOrder(workOrder);
+            dbWorkOrder.User = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
             db.WorkOrders.Add(dbWorkOrder);
             db.SaveChanges();
