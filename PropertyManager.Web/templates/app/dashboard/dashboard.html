@@ -69,28 +69,26 @@
             </table>
         </div>
 
-
-
         <div class="col-lg-6">
             <span class="label label-success" style="font-size:large">New Properties</span>
             <table class="table-hover table-bordered" style="background-color:AppWorkspace;">
-                <thead>
 
+                <thead>
                     <tr>
                         <th class="success" style="font-size:large; padding:5px">Address</th>
                         <th class="success" style="font-size:large; padding:5px">City</th>
                         <th class="success" style="font-size:large; padding:5px">State</th>
-                        <th class="success" style="font-size:large; padding:5px">Zip Code</th>
+                        <th class="success" style="font-size:large; padding:5px">Link</th>
                     </tr>
 
                 </thead>
                 <tbody>
 
                     <tr ng-repeat="property in newProperties">
-                        <td style="padding:5px">{{property.Address1}}</td>
-                        <td style="padding:5px">{{property.City}}</td>
-                        <td style="padding:5px">{{propertyState}}</td>
-                        <td style="padding:5px">{{property.ZipCode}}</td>
+                        <td>{{property.Address1}}</td>
+                        <td>{{property.City}}</td>
+                        <td>{{property.State}}</td>
+                        <td style="padding:5px"><a class="btn btn-default" ng-href="#/app/properties/detail/{{property.PropertyId}}">Link</a></td>
                     </tr>
 
                 </tbody>

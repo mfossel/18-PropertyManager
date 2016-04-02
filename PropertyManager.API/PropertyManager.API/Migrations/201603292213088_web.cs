@@ -3,7 +3,7 @@ namespace PropertyManager.API.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class creation : DbMigration
+    public partial class web : DbMigration
     {
         public override void Up()
         {
