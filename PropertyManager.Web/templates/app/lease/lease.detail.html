@@ -13,18 +13,24 @@
         </div>
 
         <div class="form-group">
-            <span class="label label-default" style="font-size:large">PropertyId</span>
-            <input type="text" class="form-control" ng-model="lease.Property.Address1" />
+            <span class="label label-default" style="font-size:large">Property</span>
+            <select class="form-control" ng-options="p.PropertyId as p.Address1 for p in properties" ng-model="lease.PropertyId">
+                <option value="">Select a Property</option>
+            </select>
         </div>
 
         <div class="form-group">
             <span class="label label-default" style="font-size:large">Start Date</span>
-            <input type="text" class="form-control" ng-model="lease.StartDate" />
+            <div>
+                <input datetime-picker type="date" ng-model="lease.StartDate" />
+            </div>
         </div>
 
         <div class="form-group">
             <span class="label label-default" style="font-size:large">End Date</span>
-            <input type="text" class="form-control" ng-model="lease.EndDate" />
+            <div>
+                <input datetime-picker type="date" ng-model="lease.EndDate" />
+            </div>
         </div>
 
         <div class="form-group">
