@@ -3,7 +3,7 @@
 
 Built with a C# backend using WebAPI, Entity Framework and SQL Server Database. 
 
-Front end built with Bootstrap and Angular.  
+Front end built with Bootstrap/Angular.  
 
 ### [DEMO](http://propzweb.azurewebsites.net)
 
