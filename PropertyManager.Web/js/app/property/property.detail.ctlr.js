@@ -3,10 +3,10 @@
     $scope.property = PropertyResource.get({ propertyId: $stateParams.id });
 
     $scope.saveProperty = function () {
+        
         $scope.property.$update(function () {
             toastr.success('Save Successful.');
-        }
+              }
+              
           );
-    }
-
-});
+    }});
